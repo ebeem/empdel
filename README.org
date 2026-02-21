@@ -1,7 +1,8 @@
 #+TITLE: empdel
-#+AUTHOR: Your Name
+#+AUTHOR: Ebeem
 #+DESCRIPTION: An ncmpcpp clone for Emacs
 #+LANGUAGE: en
+#+STARTUP: inlineimages
 
 * empdel.el
 
@@ -49,7 +50,7 @@ These keys work across *all* views to instantly jump between them.
 *** View 1: Current Playlist
 This view allows you to browse active playlist and apply changes to it. It also allows you control overall ~mpd~ behavior
 
-[[attachment:screenshot-1.jpeg][screenshot-1.jpeg]]
+[[./screenshots/screenshot-1.jpeg]]
 
 | Key     | Action                               |
 |---------+--------------------------------------|
@@ -69,7 +70,7 @@ This view allows you to browse active playlist and apply changes to it. It also 
 *** View 2: File Browser
 This view allows you to browse your tracks and add them to your playlist
 
-[[attachment:screenshot-1.jpeg][screenshot-2.jpeg]]
+[[./screenshots/screenshot-2.jpeg]]
 
 | Key     | Action                               |
 |---------+--------------------------------------|
@@ -80,7 +81,7 @@ This view allows you to browse your tracks and add them to your playlist
 *** View 3: Search Engine
 This view allows you to quickly find a track and add it to your playlist. Unlike View 2: File Browser, you don't have to drill down directories to find your tracks
 
-[[attachment:screenshot-1.jpeg][screenshot-3.jpeg]]
+[[./screenshots/screenshot-3.jpeg]]
 
 | Key            | Action                        |
 |----------------+-------------------------------|
