@@ -1,0 +1,115 @@
+#+TITLE: empdel
+#+AUTHOR: Your Name
+#+DESCRIPTION: An ncmpcpp clone for Emacs
+#+LANGUAGE: en
+
+* empdel.el
+
+~empdel~ is a feature-rich, fast, and highly capable Music Player Daemon (MPD) client for Emacs. It is heavily inspired by the curses-based UI of =ncmpcpp=.
+
+~empdel~ comes with 5 Core Views: Current Playlist, File Browser, Search Engine, Media Library, and Playlist Editor. It tries its best to stick to standard Emacs movement keys and UI. Another unique aspect of ~empdel~ is that it has no dependencies and it depends only on built-in emacs packages. It also tries to be as minimal as possible.
+
+** Installation
+
+Since the package is not yet on MELPA, you can install it manually or use a package manager like =straight.el=, =quelpa=, or =elpaca=.
+
+*** Manual Installation
+1. Clone the repository:
+   #+BEGIN_SRC shell
+     git clone https://codeberg.org/ebeem/empdel.git ~/.emacs.d/lisp/empdel
+   #+END_SRC
+2. Add the following to your =init.el=:
+   #+BEGIN_SRC elisp
+   (add-to-list 'load-path "~/.emacs.d/lisp/empdel")
+   (require 'empdel)
+   #+END_SRC
+
+*** Using =use-package= and =straight.el=
+#+BEGIN_SRC elisp
+(use-package empdel
+  :ensure (:host github :repo "ebeem/empdel")
+  :bind ("C-c o M" . empdel))
+#+END_SRC
+
+** Usage & Keybindings
+
+Launch the client at any time by running =M-x empdel=.
+
+*** Global Navigation
+These keys work across *all* views to instantly jump between them.
+
+| Key | Action                          |
+|-----+---------------------------------|
+| =1=   | *View 1:* Current Active Playlist |
+| =2=   | *View 2:* File Browser            |
+| =3=   | *View 3:* Search Engine           |
+| =4=   | *View 4:* Media Library (Artists) |
+| =5=   | *View 5:* Saved Playlist Editor   |
+
+*** View 1: Current Playlist
+This view allows you to browse active playlist and apply changes to it. It also allows you control overall ~mpd~ behavior
+
+[[attachment:screenshot-1.jpeg][screenshot-1.jpeg]]
+
+| Key     | Action                               |
+|---------+--------------------------------------|
+| =SPC=     | Toggle Play / Pause                  |
+| =RET=     | Play the selected track              |
+| =>=       | Next Track                           |
+| =<=       | Previous Track                       |
+| =d= / =DEL= | Delete selected track from queue     |
+| =c=       | Clear the entire current queue       |
+| =g=       | Refresh the current view             |
+| =s=       | Save current queue to a new playlist |
+| =P=       | Toggle Repeat Mode                   |
+| =R=       | Toggle Random (Shuffle) Mode         |
+| =S=       | Toggle Single Mode                   |
+| =C=       | Toggle Consume Mode                  |
+
+*** View 2: File Browser
+This view allows you to browse your tracks and add them to your playlist
+
+[[attachment:screenshot-1.jpeg][screenshot-2.jpeg]]
+
+| Key     | Action                               |
+|---------+--------------------------------------|
+| =SPC= / =a= | Add track to current playlist        |
+| =RET=     | Enter directory                      |
+| =^= / =u=   | Return to parent directory           |
+
+*** View 3: Search Engine
+This view allows you to quickly find a track and add it to your playlist. Unlike View 2: File Browser, you don't have to drill down directories to find your tracks
+
+[[attachment:screenshot-1.jpeg][screenshot-3.jpeg]]
+
+| Key            | Action                        |
+|----------------+-------------------------------|
+| =SPC= / =a=  / =RET= | Add track to current playlist |
+| =s=              | Search                        |
+
+*** View 4: Library
+This view allows you to browse your library, find tracks and them to your playlist. Unlike View 2: File Browser, you drill down tracks using artist and album rather than directories
+
+
+| Key            | Action                        |
+|---------+--------------------------------------|
+| =SPC= / =a= | Add track to current playlist        |
+| =RET=     | Enter directory                      |
+| =^= / =u=   | Return to parent directory           |
+
+*** View 5: Playlists
+This view allows you to browse your playlists and manage them
+
+
+| Key     | Action                                        |
+|---------+-----------------------------------------------|
+| =SPC= / =a= | Add tracks of the playlist to active playlist |
+| =RET=     | Enter playlist                                |
+| =^= / =u=   | Return to parent directory                    |
+| =d=       | Delete playlist                               |
+| =s=       | Save playlist                                 |
+
+
+** Contributing
+Pull requests are welcome! If you find a bug regarding MPD parsing or want to implement advanced features (like tag editing or lyrics fetching), feel free to open an issue or submit a patch.
+This package was tested only by me so expect some bugs or missing features.
