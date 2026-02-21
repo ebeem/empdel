@@ -5,6 +5,7 @@
 #+STARTUP: inlineimages
 
 * empdel.el
+NOTE: this is a fork repo, I switched to [[https://codeberg.org/ebeem/empdel][codeberg]]
 
 ~empdel~ is a feature-rich, fast, and highly capable Music Player Daemon (MPD) client for Emacs. It is heavily inspired by the curses-based UI of =ncmpcpp=.
 
